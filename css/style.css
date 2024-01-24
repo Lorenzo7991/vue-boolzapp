@@ -3,4 +3,61 @@ body {
     height: 100vh;
     background: linear-gradient(to bottom, rgb(0, 149, 135) 80px, rgb(216, 217, 209) 80px);
     background-size: 100% 100%;
+    padding-top: 20px;
+
+}
+
+/* ^ Main */
+
+#app-container {
+    margin: 0 auto;
+    height: 90vh;
+    border: 2px dotted gold;
+}
+
+[class^="col"] {
+    height: 90vh;
+    border: 2px dotted forestgreen;
+    padding: 0;
+
+}
+
+/* ^ User/Contacts column */
+#user-head {
+    min-height: 50px;
+    background-color: rgb(234, 234, 234);
+}
+
+#notifications {
+    min-height: 60px;
+    background-color: rgb(142, 218, 252);
+    border: 2px dotted blue;
+
+}
+
+#search-bar {
+    border: 2px dotted green;
+}
+
+#contact-list {
+    background-color: white;
+    height: 100%;
+}
+
+/* ^ Chat column */
+
+#chat-head {
+    min-height: 50px;
+    background-color: rgb(234, 234, 234);
+}
+
+#chat img {
+    width: 100%;
+    height: auto;
+}
+
+#user-messagebar {
+    min-height: 30px;
+    background-color: rgb(234, 234, 234);
+    border: 2px dotted blue;
 }
