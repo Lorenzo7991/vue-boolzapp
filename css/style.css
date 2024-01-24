@@ -1,0 +1,6 @@
+/* ^ Utilities */
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(0, 149, 135) 80px, rgb(216, 217, 209) 80px);
+    background-size: 100% 100%;
+}

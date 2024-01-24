@@ -1,3 +1,5 @@
+console.log('D-JS-OK');
+
 const user = {
     name: 'Nome Utente',
     avatar: '_io'
