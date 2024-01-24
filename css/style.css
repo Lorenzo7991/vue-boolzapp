@@ -1,3 +1,10 @@
+/* ^ Generics */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 /* ^ Utilities */
 body {
     height: 100vh;
@@ -7,12 +14,20 @@ body {
 
 }
 
+.cs-text-color {
+    color: rgb(177, 177, 177);
+}
+
 /* ^ Main */
 
 #app-container {
     margin: 0 auto;
-    height: 90vh;
+    height: 650px;
     border: 2px dotted gold;
+}
+
+#row-app {
+    height: 100%;
 }
 
 [class^="col"] {
@@ -26,6 +41,12 @@ body {
 #user-head {
     min-height: 50px;
     background-color: rgb(234, 234, 234);
+    padding: 5px 5px
+}
+
+#user-head img {
+    max-width: 50px;
+    border-radius: 50px;
 }
 
 #notifications {
@@ -52,10 +73,12 @@ body {
 }
 
 #chat {
-    height: 300px;
+
     background-image: url(../assets/img/mine.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    flex-grow: 1;
+
 
 }
 

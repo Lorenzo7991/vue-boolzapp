@@ -27,11 +27,24 @@
 <body>
     <div id="root">
         <main id="app-container" class="container">
-
-            <div class="row">
+            <div id="row-app" class="row">
                 <div class="col-4">
-                    <header id="user-head">
-                        <h2>User name</h2>
+                    <header id="user-head"
+                        class="d-flex justify-content-center align-items-center justify-content-between">
+                        <div id="user-img"><img src="assets/img/avatar_io.jpg" alt="user_avatar"></div>
+                        <div id="user-name" class="fw-semibold">Nome Utente</div>
+                        <div id="head-utilities">
+                            <ul class="d-flex justify-content-center align-items-center justify-content-between gap-3">
+                                <li><span role="button" id="refresh-chat" class="cs-text-color"><i
+                                            class="fa-solid fa-rotate"></i></span></li>
+                                <li><span role="button" id="new-chat" class="cs-text-color "><i
+                                            class="fa-regular fa-comment"></i></span></li>
+                                <li><span role="button" id="options" class="cs-text-color "><i
+                                            class="fa-solid fa-gear"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+
                     </header>
                     <section id="notifications">
                         <p>Ricevi notifiche desktop</p>
