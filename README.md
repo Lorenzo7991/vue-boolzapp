@@ -13,3 +13,14 @@ Troverete nella cartella degli asset:
 > `Non potete modificare la struttura dei dati`
 
 > `La scadenza per la consegna dell'esercizio è Venerdì 26 Gennaio ore 18:00`
+
+# Example layouts:
+![Example_1](assets/example_layouts/screenshot%20milestone%201.png "Example_layout_ms1")
+---
+![Example_2](assets/example_layouts/screenshot_milestone2.png "Example_layout_ms2")
+---
+![Example_3](assets/example_layouts/screenshot_milestone3.png "Example_layout_ms3")
+---
+![Example_4](assets/example_layouts/screenshot_milestone4.png "Example_layout_ms4")
+---
+![Example_5](assets/example_layouts/screenshot_milestone5.png "Example_layout_ms5")
