@@ -27,56 +27,98 @@
 <body>
     <div id="root">
         <main id="app-container" class="container">
+            <!--* Main row for application -->
             <div id="row-app" class="row">
+                <!--* Left column: User information and utilities -->
                 <div class="col-4">
+                    <!--* User header section -->
                     <header id="user-head"
                         class="d-flex justify-content-center align-items-center justify-content-between">
+                        <!--* User image -->
                         <div id="user-img"><img src="assets/img/avatar_io.jpg" alt="user_avatar"></div>
-                        <div id="user-name" class="fw-semibold">Nome Utente</div>
+                        <!--* User name -->
+                        <div id="user-name" class="fw-semibold">Username</div>
+                        <!--* Head utilities, such as refresh, new chat, and options -->
                         <div id="head-utilities">
                             <ul class="d-flex justify-content-center align-items-center justify-content-between gap-3">
+                                <!--* Refresh chat button -->
                                 <li><span role="button" id="refresh-chat" class="cs-text-color"><i
                                             class="fa-solid fa-rotate"></i></span></li>
-                                <li><span role="button" id="new-chat" class="cs-text-color "><i
+                                <!--* New chat button -->
+                                <li><span role="button" id="new-chat" class="cs-text-color"><i
                                             class="fa-regular fa-comment"></i></span></li>
-                                <li><span role="button" id="options" class="cs-text-color "><i
-                                            class="fa-solid fa-gear"></i></span>
-                                </li>
+                                <!--* Options button -->
+                                <li><span role="button" id="options" class="cs-text-color"><i
+                                            class="fa-solid fa-gear"></i></span></li>
                             </ul>
                         </div>
-
                     </header>
+
+                    <!--* Notifications section -->
                     <section id="notifications">
-                        <p>Ricevi notifiche desktop</p>
+                        <p>Receive desktop notifications</p>
                     </section>
+
+                    <!--* Contacts section with search bar and contact list -->
                     <section id="contacts">
                         <div id="search-bar">Search bar</div>
                         <div id="contact-list">
                             <ul>
-                                <li>contact1</li>
-                                <li>contact1</li>
-                                <li>contact1</li>
-                                <li>contact1</li>
-                                <li>contact1</li>
+                                <!--* List of contacts -->
+                                <li>Contact 1</li>
+                                <li>Contact 2</li>
+                                <li>Contact 3</li>
+                                <li>Contact 4</li>
+                                <li>Contact 5</li>
                             </ul>
                         </div>
                     </section>
-
                 </div>
+
+                <!--* Right column: Chat area and user message bar -->
                 <div class="col-8">
+                    <!--* Chat header section with contact name -->
                     <header id="chat-head">
-                        <h2>Contact name</h2>
+                        <header id="user-head"
+                            class="d-flex justify-content-center align-items-center justify-content-between">
+                            <!--* Contact image -->
+                            <div id="contact-data" class="d-flex justify-content-center align-items-center gap-3">
+                                <div id="user-img"><img src="assets/img/avatar_1.jpg" alt="contact_avatar"></div>
+                                <!--* Contact name -->
+                                <div id="user-name" class="fw-semibold">Contact Name</div>
+                            </div>
+                            <!--* Head utilities, such as refresh, new chat, and options -->
+                            <div id="head-contact-utilities" class="me-3">
+                                <ul
+                                    class="d-flex justify-content-center align-items-center justify-content-between gap-3">
+                                    <!--* Search message button -->
+                                    <li><span role="button" id="refresh-chat" class="cs-text-color"><i
+                                                class="fa-solid fa-magnifying-glass"></i></span></li>
+                                    <!--* Paperclip button -->
+                                    <li><span role="button" id="new-chat" class="cs-text-color"><i
+                                                class="fa-solid fa-paperclip"></i></span></li>
+                                    <!--* Options button -->
+                                    <li><span role="button" id="options" class="cs-text-color"><i
+                                                class="fa-solid fa-gear"></i></span></li>
+                                </ul>
+                            </div>
+                        </header>
                     </header>
+
+                    <!--* Chat section -->
                     <section id="chat">
+                        <!--* Chat content goes here -->
                     </section>
+
+                    <!--* User message bar for typing messages -->
                     <section id="user-messagebar">
-                        <p>type your message...</p>
+                        <p>Type your message...</p>
                     </section>
                 </div>
-
+            </div>
         </main>
     </div>
-    </div>
 </body>
+*
 
 </html>
