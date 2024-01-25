@@ -12,6 +12,13 @@ createApp({
     methods: {
         selectContact(contact)  {
             this.selectedContact = contact;
-        } 
+        } ,
+        getMessageClasses(message) {
+            return {
+                'message': true,
+                'sent': message.status === 'sent',
+                'received': message.status === 'received'
+            };
+        }
     }
 }).mount('#root')

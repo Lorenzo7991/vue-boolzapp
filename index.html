@@ -52,9 +52,7 @@
             <main>
                 <!--* Notifications section -->
                 <section id="notifications" class="bg-cs-ligehtblu d-flex align-items-center flex-shrink-0">
-                    <div role="button" id="notifications-icon"
-                        class="d-flex justify-content-center align-items-center fs-5 m-2"><i
-                            class="fa-solid fa-bell-slash"></i></div>
+                    <div role="button" id="notifications-icon" class="d-flex justify-content-center align-items-center fs-5 m-2"><i class="fa-solid fa-bell-slash cl-cs-lightblue"></i></div>
                     <div id="label" class="lh-1">
                         <p>Receive notifications for new messages </p>
                         <a href="#">Enable desktop notifications</a>
@@ -70,11 +68,11 @@
                     </div>
                     </section>
                     <!-- * Contacts list -->
-                    <section id="contacts-list" class="flex-grow-1 overflow-auto p-2" >
+                    <section id="contacts-list" class="flex-grow-1 overflow-auto " >
                         <ul>
-                        <li v-for="contact in contacts" :key="contact.id" id="profile" class="d-flex align-items-center my-2" @click="selectContact(contact)">
+                        <li role="button" v-for="contact in contacts" :key="contact.id" id="profile" class="d-flex align-items-center my-2 p-2" @click="selectContact(contact)">
                             <!-- * Contact img -->
-                            <img :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="'avatar' + contact.id">
+                            <img  :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="'avatar' + contact.id">
                             <!-- * Contact name -->
                             <div class="name fw-semibold ms-2">{{ contact.name }}</div>
                         </li>
@@ -111,11 +109,8 @@
             </header>
             <!-- * Chat display -->
             <main id="chat-display" class="d-flex flex-column flex-grow-1 p-4">
-                <!-- * Send msg -->
-                <div class="message send bg-cs-msgsend">Come stai?</div>
-                <!-- * Recived msg -->
-                <div class="message recived">Bene grazie!</div>
-            </main>
+                <div v-for="message in selectedContact.messages" :key="message.id" :class="getMessageClasses(message)">{{ message.text }}</div>
+        </main>
             <!-- * User msg bar -->
             <footer id="message-bar" class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-3">
                 <!-- * Emoji btn -->
