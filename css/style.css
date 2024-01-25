@@ -1,34 +1,43 @@
-/* ^ Generics */
+/* ^ CUSTOM COLORS */
+.bg-cs-gray {
+    background-color: rgb(234, 234, 234);
+}
+
+.bg-cs-ligehtblu{
+    background-color: rgb(142, 218, 252);
+}
+
+.cl-cs-darkgray {
+    color: rgb(111, 111, 111);
+}
+
+.bg-cs-msgsend{
+    background-color: rgb(165, 243, 106);
+}
+
+/* ^ GENERICS */
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-/* ^ Utilities */
+p {
+    margin: 0;
+}
+
+/* ^ UTILITIES */
 body {
     height: 100vh;
     background: linear-gradient(to bottom, rgb(0, 149, 135) 80px, rgb(216, 217, 209) 80px);
     background-size: 100% 100%;
-    padding-top: 20px;
 }
 
-.cs-text-color {
-    color: rgb(177, 177, 177);
-}
 
-.input-group-text {
-    background-color: white;
-    border-color: rgb(177, 177, 177);
-}
-
-#contact-list {
-    max-height: 100%;
-    overflow-y: auto;
-}
-
-#contact-list li {
-    margin: 20px 0;
+.profile img {
+    max-width: 50px;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
 .form-control {
@@ -39,48 +48,32 @@ body {
 .form-control:focus {
     border-color: transparent;
     box-shadow: none;
+    border-color: rgb(177, 177, 177);
 }
 
-/* ^ Main */
-
-#app-container {
-    margin: 0 auto;
-    height: 650px;
-    border: 2px dotted gold;
-
+.input-group-text{
+    background-color: white;
+    border-color: rgb(177, 177, 177);
 }
 
-#row-app {
-    height: 100%;
+#msg:focus {
+    outline: none; 
+  }
 
+
+/* ^ MAIN */
+.container.row {
+    height: 90vh;
+    margin-top: 30px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2)
 }
 
-[class^="col"] {
-    height: 100%;
-    border: 2px dotted forestgreen;
-    padding: 0;
-    background-color: rgb(250, 250, 250);
-    overflow-y: auto;
-}
-
-/* ^ User/Contacts column */
-#user-head {
-    min-height: 50px;
-    background-color: rgb(234, 234, 234);
-    padding: 5px;
-}
-
-#user-head img,
-#contact-img img,
-.contacts-img img {
+#profile img {
     max-width: 50px;
     border-radius: 50px;
 }
 
-#notifications {
-    min-height: 60px;
-    background-color: rgb(142, 218, 252);
-}
+/* * Left col */
 
 #label p,
 #label a {
@@ -97,24 +90,34 @@ body {
     color: aqua;
 }
 
-/* ^ Chat column */
-
-#chat-head {
-    min-height: 50px;
-    background-color: rgb(234, 234, 234);
-    padding: 5px;
+/* * right col */
+.last-access{
+    font-size: 0.8rem;
 }
 
-/* TODO: Add chat section and messagebar style  */
-#chat {
+#chat-display {
 
     background-image: url(../assets/img/mine.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#user-messagebar {
-    min-height: 30px;
-    background-color: rgb(234, 234, 234);
-    border: 2px dotted blue;
+
+.message{
+  border-radius: 20px;
+  padding: 10px 25px;
+  margin: 10px;
+  max-width: 70%;
+}
+
+.message.send{
+  align-self: flex-end;
+  text-align: right;
+
+}
+
+.message.recived{
+    background-color: white;
+    align-self: flex-start;
+    text-align: left;
 }

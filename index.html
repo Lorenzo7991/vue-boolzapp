@@ -24,361 +24,105 @@
 </head>
 
 
-<body>
+<body class="vh-100">
     <div id="root">
-        <main id="app-container" class="container">
-            <!--* Main row for application -->
-            <div id="row-app" class="row">
-                <!--* Left column: User information and utilities -->
-                <div class="col-4">
-                    <!--* User header section -->
-                    <header id="user-head"
-                        class="d-flex justify-content-center align-items-center justify-content-between">
-                        <!--* User image -->
-                        <div id="user-img"><img src="assets/img/avatar_io.jpg" alt="user_avatar"></div>
-                        <!--* User name -->
-                        <div id="user-name" class="fw-semibold">Username</div>
-                        <!--* Head utilities, such as refresh, new chat, and options -->
-                        <div id="head-utilities">
-                            <ul class="d-flex justify-content-center align-items-center justify-content-between gap-3">
-                                <!--* Refresh chat button -->
-                                <li><span role="button" id="refresh-chat" class="cs-text-color"><i
-                                            class="fa-solid fa-rotate"></i></span></li>
-                                <!--* New chat button -->
-                                <li><span role="button" id="new-chat" class="cs-text-color"><i
-                                            class="fa-regular fa-comment"></i></span></li>
-                                <!--* Options button -->
-                                <li><span role="button" id="options" class="cs-text-color"><i
-                                            class="fa-solid fa-gear"></i></span></li>
-                            </ul>
-                        </div>
-                    </header>
-
-                    <!--* Notifications section -->
-                    <section id="notifications" class="d-flex align-items-center">
-                        <div role="button" id="notifications-icon"
-                            class="d-flex justify-content-center align-items-center fs-5 m-2"><i
-                                class="fa-solid fa-bell-slash"></i></div>
-                        <div id="label" class="lh-1">
-                            <p>Receive notifications for new messages </p>
-                            <a href="#">Enable desktop notifications</a>
-                        </div>
-                    </section>
-
-                    <!--* Contacts section with search bar and contact list -->
-                    <section id="contacts">
-                        <div id="search-bar">
-                            <div class="input-group flex-nowrap p-1">
-                                <span role="button" class="input-group-text cs-text-color border-end-0"
-                                    id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control border-start-0" placeholder="Search..."
-                                    aria-label="SearchBar" aria-describedby="search-bar">
-                            </div>
-                        </div>
-                        <div id="contact-list">
-                            <!-- * List of contacts -->
-                            <ul>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_1.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_2.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_3.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_4.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- ! START TESTING -->
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center gap-3">
-                                            <div class="contacts-img"><img src="assets/img/avatar_5.jpg"
-                                                    alt="contact_avatar"></div>
-                                            <div class="fw-semibold">Contact Name</div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-
-                        </div>
-                    </section>
+        <main class="container row mx-auto p-0"> 
+            <!-- * Left col -->
+        <div id="left-col" class="col-4 bg-white d-flex flex-column p-0">
+            <!-- * User header -->
+            <header class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-2 ">
+                <div class="profile d-flex justify-content-center align-items-center">
+                    <img src="assets/img/avatar_io.jpg" alt="user_avatar">
+                    <!-- * Username -->
+                    <div id="user-name" class="fw-semibold ms-2">Username</div>
                 </div>
-
-                <!--* Right column: Chat area and user message bar -->
-                <div class="col-8">
-                    <!--* Chat header section with contact name -->
-                    <header id="chat-head"
-                        class="d-flex justify-content-center align-items-center justify-content-between">
-                        <!--* Contact image -->
-                        <div id="contact-data" class="d-flex justify-content-center align-items-center gap-3">
-                            <div id="contact-img"><img src="assets/img/avatar_1.jpg" alt="contact_avatar"></div>
-                            <!--* Contact name -->
-                            <div id="contact-name" class="fw-semibold">Contact Name</div>
-                        </div>
-                        <!--* Head utilities, such as refresh, new chat, and options -->
-                        <div id="head-contact-utilities" class="me-3">
-                            <ul class="d-flex justify-content-center align-items-center justify-content-between gap-3">
-                                <!--* Search message button -->
-                                <li><span role="button" id="refresh-chat" class="cs-text-color"><i
-                                            class="fa-solid fa-magnifying-glass"></i></span></li>
-                                <!--* Paperclip button -->
-                                <li><span role="button" id="new-chat" class="cs-text-color"><i
-                                            class="fa-solid fa-paperclip"></i></span></li>
-                                <!--* Options button -->
-                                <li><span role="button" id="options" class="cs-text-color"><i
-                                            class="fa-solid fa-gear"></i></span></li>
-                            </ul>
-                        </div>
-                    </header>
-
-                    <!--* Chat section -->
-                    <section id="chat">
-                        <!--TODO: Chat content goes here... -->
-                    </section>
-
-                    <!--* User message bar for typing messages -->
-                    <section id="user-messagebar">
-                        <p>Type your message...</p>
-                    </section>
+                <!-- * User utilities -->
+                <div id="utilities">
+                    <ul class="d-flex align-items-center justify-content-between gap-3">
+                        <!--* Refresh chat button -->
+                        <li><span role="button" id="refresh-chat" class="cl-cs-darkgray"><i class="fa-solid fa-rotate"></i></span></li>
+                        <!--* New chat button -->
+                        <li><span role="button" id="new-chat" class="cl-cs-darkgray"><i class="fa-regular fa-comment"></i></span></li>
+                        <!--* Options button -->
+                        <li><span role="button" id="options" class="cl-cs-darkgray"><i class="fa-solid fa-gear"></i></span></li>
+                    </ul>
                 </div>
-            </div>
-        </main>
+            </header>
+            <main>
+                <!--* Notifications section -->
+                <section id="notifications" class="bg-cs-ligehtblu d-flex align-items-center flex-shrink-0">
+                    <div role="button" id="notifications-icon"
+                        class="d-flex justify-content-center align-items-center fs-5 m-2"><i
+                            class="fa-solid fa-bell-slash"></i></div>
+                    <div id="label" class="lh-1">
+                        <p>Receive notifications for new messages </p>
+                        <a href="#">Enable desktop notifications</a>
+                    </div>
+                </section>
+                <!-- * Search bar -->
+                <section id="search-bar" class="flex-shrink-0">
+                    <div class="input-group flex-nowrap p-1">
+                        <span role="button" class="input-group-text cs-text-color border-end-0" id="search-icon"><i
+                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control border-start-0" placeholder="Search..."
+                            aria-label="SearchBar" aria-describedby="search-bar">
+                    </div>
+                    </section>
+                    <!-- * Contacts list -->
+                    <section id="contacts-list" class="flex-grow-1 overflow-auto p-2" >
+                        <ul>
+                        <li id="profile" class="d-flex align-items-center">
+                            <!-- * Contact img -->
+                            <img src="assets/img/avatar_1.jpg" alt="avatar1">
+                            <!-- * Contact name -->
+                            <div class="name fw-semibold ms-2">Username</div>
+                        </li>
+                    </ul>
+                    </section>
+                </main>
+        </div>
+        <div id="right-col" class="col-8 d-flex flex-column p-0">
+            <!-- * Chat header -->
+            <header class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-2 ">
+                <div class="profile d-flex justify-content-center align-items-center">
+                    <img src="assets/img/avatar_2.jpg" alt="user_avatar">
+                    <!-- * contact name -->
+                    <div class="fw-semibold ms-2">
+                       <div class="name">Contact Name</div>
+                        <div class="last-access cl-cs-darkgray lh-1">Ultimo accesso...</div>
+                    </div>
+                </div>
+                <!-- * Chat utilities -->
+                <div id="utilities">
+                    <ul class="d-flex align-items-center justify-content-between gap-3">
+                        <!--* Refresh chat button -->
+                        <li><span role="button" id="refresh-chat" class="cl-cs-darkgray"><i class="fa-solid fa-magnifying-glass"></i></span></li>
+                        <!--* New chat button -->
+                        <li><span role="button" id="new-chat" class="cl-cs-darkgray"><i class="fa-solid fa-paperclip"></i></span></li>
+                        <!--* Options button -->
+                        <li><span role="button" id="options" class="cl-cs-darkgray"><i class="fa-solid fa-gear"></></i></span></li>
+                    </ul>
+                </div>
+            </header>
+            <!-- * Chat display -->
+            <main id="chat-display" class="d-flex flex-column flex-grow-1 p-4">
+                <!-- * Send msg -->
+                <div class="message send bg-cs-msgsend">Come stai?</div>
+                <!-- * Recived msg -->
+                <div class="message recived">Bene grazie!</div>
+            </main>
+            <!-- * User msg bar -->
+            <footer id="message-bar" class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-3">
+                <!-- * Emoji btn -->
+                <div role="button" class="emoticons cl-cs-darkgray"><i class="fs-4 fa-regular fa-face-smile"></i></div>
+                <!-- * User text imput -->
+                <input type="text" class="flex-grow-1 lh-lg border-0 rounded-3 mx-4 ps-3" name="message-bar" id="msg" placeholder="Type a message" />
+                <!-- * Voice recording -->
+                <div role="button" class="micro cl-cs-darkgray"><i class="fs-4 fa-solid fa-microphone"></i></div>
+            </footer>
+        </div>
+
+    </main>
     </div>
 </body>
 
