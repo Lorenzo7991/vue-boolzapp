@@ -26,15 +26,16 @@
 
 <body class="vh-100">
     <div id="root">
-        <main class="container row mx-auto p-0"> 
+        <main class="container row mx-auto p-0 mx-5"> 
             <!-- * Left col -->
         <div id="left-col" class="col-4 bg-white d-flex flex-column p-0">
             <!-- * User header -->
             <header class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-2 ">
                 <div class="profile d-flex justify-content-center align-items-center">
-                    <img src="assets/img/avatar_io.jpg" alt="user_avatar">
+                    <img :src="`assets/img/${user.avatar}.jpg`" alt="user_avatar">
+
                     <!-- * Username -->
-                    <div id="user-name" class="fw-semibold ms-2">Username</div>
+                    <div id="user-name" class="fw-semibold ms-2">{{user.name}}</div>
                 </div>
                 <!-- * User utilities -->
                 <div id="utilities">
@@ -71,11 +72,11 @@
                     <!-- * Contacts list -->
                     <section id="contacts-list" class="flex-grow-1 overflow-auto p-2" >
                         <ul>
-                        <li id="profile" class="d-flex align-items-center">
+                        <li v-for="contact in contacts" :key="contact.id" id="profile" class="d-flex align-items-center my-2">
                             <!-- * Contact img -->
-                            <img src="assets/img/avatar_1.jpg" alt="avatar1">
+                            <img :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="'avatar' + contact.id">
                             <!-- * Contact name -->
-                            <div class="name fw-semibold ms-2">Username</div>
+                            <div class="name fw-semibold ms-2">{{ contact.name }}</div>
                         </li>
                     </ul>
                     </section>

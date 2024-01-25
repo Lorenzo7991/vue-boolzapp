@@ -64,6 +64,7 @@ body {
 /* ^ MAIN */
 .container.row {
     height: 90vh;
+    max-width: 80%;
     margin-top: 30px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2)
 }
