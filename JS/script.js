@@ -10,6 +10,7 @@ const app = createApp({
             newMessage: '',
             chatMessages: [],
             nextMessageId: '',
+            isTyping: false,
         };
     },
     computed: {
@@ -41,7 +42,24 @@ const app = createApp({
                 this.chatMessages.push(newMessage);
                 //* Resets the new message input field
                 this.newMessage = '';
+
+                //*Delay sending automatic response
+                setTimeout(() =>  {
+                    //* Call sendAutomaticResponse method to simulate sending response
+                    this.sendAutomaticResponse();
+                    //*set isTyping flag false.
+                    this.isTyping = false;
+                }, 1000);
+                //* Set isTyping flag to simulate fake contact typing a response
+                this.isTyping = true;
             }
+        },
+        //* Method to simulate sending automatic response.
+        sendAutomaticResponse() {
+            //* Create a response message object
+            const responseMessage = { id: this.nextMessageId++, text: 'Ciao!', status: 'received' };
+            //* Push the response message
+            this.chatMessages.push(responseMessage);
         }
     }
 })

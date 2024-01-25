@@ -93,7 +93,6 @@ body {
 }
 
 /* * Left col */
-
 #label p,
 #label a {
     margin: 0;
@@ -113,9 +112,8 @@ body {
   #contacts-list{
     height: 450px;
   }
-/* * right col */
 
-
+  /* * right col */
 .last-access{
     font-size: 0.8rem;
 }

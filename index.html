@@ -88,7 +88,10 @@
                     <!-- * contact name -->
                     <div class="fw-semibold ms-2">
                         <div class="name">{{ selectedContact.name }}</div>
-                        <div class="last-access cl-cs-darkgray lh-1">Ultimo accesso...</div>
+                        <div class="last-access cl-cs-darkgray lh-1">
+                            <span v-if="isTyping">Typing...</span>
+                            <span v-else>Last seen: ...</span>
+                        </div>
                     </div>
                 </div>
                 <div v-else id="app-title" class="d-flex cl-cs-darkgray ms-3 gap-3">
