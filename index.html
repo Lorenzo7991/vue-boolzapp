@@ -108,15 +108,22 @@
                 </div>
             </header>
             <!-- * Chat display -->
-            <main id="chat-display" class="d-flex flex-column flex-grow-1 p-4">
-                <div v-for="message in selectedContact.messages" :key="message.id" :class="getMessageClasses(message)">{{ message.text }}</div>
+        <main id="chat-display" class="d-flex flex-column flex-grow-1 overflow-auto p-4">
+            <div v-for="message in selectedContact.messages" :key="'received_' + message.id" :class="getMessageClasses(message)">
+                {{ message.text }}
+            </div>
+            <div v-for="message in chatMessages" :key="'sent_' + message.id" :class="getMessageClasses(message)">
+                {{ message.text }}
+            </div>
         </main>
             <!-- * User msg bar -->
-            <footer id="message-bar" class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-3">
+            <footer id="message-bar" class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-3 gap-3">
                 <!-- * Emoji btn -->
                 <div role="button" class="emoticons cl-cs-darkgray"><i class="fs-4 fa-regular fa-face-smile"></i></div>
                 <!-- * User text imput -->
-                <input type="text" class="flex-grow-1 lh-lg border-0 rounded-3 mx-4 ps-3" name="message-bar" id="msg" placeholder="Type a message" />
+                <input type="text" class="msg-bar flex-grow-1 lh-lg border-0 rounded-3 mx-4 ps-3 " name="message-bar" id="msg" v-model="newMessage" @keyup.enter="sendMessage" :placeholder="placeholderText" :disabled="!selectedContact"/>
+                <!-- * sent btn -->
+                <div role="button" class="btn-sent cl-cs-darkgray" @click="sendMessage"><i class="fs-4 fa-solid fa-paper-plane"></i></div>
                 <!-- * Voice recording -->
                 <div role="button" class="micro cl-cs-darkgray"><i class="fs-4 fa-solid fa-microphone"></i></div>
             </footer>

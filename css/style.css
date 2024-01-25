@@ -34,6 +34,8 @@ body {
     height: 100vh;
     background: linear-gradient(to bottom, rgb(0, 149, 135) 80px, rgb(216, 217, 209) 80px);
     background-size: 100% 100%;
+    padding-top: 30px;
+    overflow: hidden;
 }
 
 
@@ -64,6 +66,14 @@ body {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2)
   }
 
+  #contacts-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  #chat-display::-webkit-scrollbar {
+    display: none;
+  }
+
 #msg:focus {
     outline: none; 
   }
@@ -74,7 +84,6 @@ body {
 .container.row {
     height: 90vh;
     max-width: 80%;
-    margin-top: 30px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2)
 }
 
@@ -99,10 +108,11 @@ body {
     border-radius: 50px;
 }
 
-#contacts-list{
-    height: 450px;
-}
 
+
+  #contacts-list{
+    height: 450px;
+  }
 /* * right col */
 
 
@@ -115,7 +125,7 @@ body {
 }
 
 #chat-display {
-
+    height: 450px;
     background-image: url(../assets/img/mine.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -148,4 +158,8 @@ body {
     background-color: white;
     align-self: flex-start;
     text-align: left;
+}
+
+#message-bar .msg-bar{
+    margin: 0!important
 }
