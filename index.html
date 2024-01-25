@@ -72,7 +72,7 @@
                     <!-- * Contacts list -->
                     <section id="contacts-list" class="flex-grow-1 overflow-auto p-2" >
                         <ul>
-                        <li v-for="contact in contacts" :key="contact.id" id="profile" class="d-flex align-items-center my-2">
+                        <li v-for="contact in contacts" :key="contact.id" id="profile" class="d-flex align-items-center my-2" @click="selectContact(contact)">
                             <!-- * Contact img -->
                             <img :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="'avatar' + contact.id">
                             <!-- * Contact name -->
@@ -84,14 +84,18 @@
         </div>
         <div id="right-col" class="col-8 d-flex flex-column p-0">
             <!-- * Chat header -->
-            <header class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-2 ">
-                <div class="profile d-flex justify-content-center align-items-center">
-                    <img src="assets/img/avatar_2.jpg" alt="user_avatar">
+            <header id="chat-header" class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-2 ">
+                <div class="profile d-flex justify-content-center align-items-center" v-if="selectedContact">
+                    <img :src="`assets/img/avatar${selectedContact.avatar}.jpg`" :alt="'avatar' + selectedContact.id">
                     <!-- * contact name -->
                     <div class="fw-semibold ms-2">
-                       <div class="name">Contact Name</div>
+                        <div class="name">{{ selectedContact.name }}</div>
                         <div class="last-access cl-cs-darkgray lh-1">Ultimo accesso...</div>
                     </div>
+                </div>
+                <div v-else id="app-title" class="d-flex cl-cs-darkgray ms-3 gap-3">
+                    <h2>Boolzapp</h2>
+                    <i class="fa-solid fa-comments cl-cs-darkgray fs-3"></i>
                 </div>
                 <!-- * Chat utilities -->
                 <div id="utilities">

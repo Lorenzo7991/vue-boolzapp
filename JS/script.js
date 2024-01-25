@@ -6,6 +6,12 @@ createApp({
     data() {
         return {
             ...data,
+            selectedContact: '',
         }
+    },
+    methods: {
+        selectContact(contact)  {
+            this.selectedContact = contact;
+        } 
     }
 }).mount('#root')
