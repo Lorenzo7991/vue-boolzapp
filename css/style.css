@@ -130,13 +130,15 @@ body {
     background-position: center;
 }
 
-.chat-display-contactnull{
+
+/* TODO:
+    .chat-display-contactnull{
     background-image: url(../assets/img/chat-elements_1284-669.avif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
-
+    }
+*/
 
 .message{
   border-radius: 20px;
