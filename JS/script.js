@@ -14,64 +14,76 @@ const app = createApp({
         };
     },
     computed: {
+        // * Computes the highest message ID in the chatMessages array
         highestIdMessage() {
-            // *Initialize variable to hold highest ID found
+            // * Initialize variable to hold highest ID found
             let highId = 0;
-            //* Iterate through each message in chatMessages array
-        for (const message of this.chatMessages) {
-            //* Check ID of current message if is greater than the current highest ID
-            if (message.id > highId) {
-                // * Update the highest ID to the ID of the current message
-                highId = message.id;
+            // * Iterate through each message in chatMessages array
+            for (const message of this.chatMessages) {
+                // * Check ID of current message if greater than the current highest ID
+                if (message.id > highId) {
+                    // * Update the highest ID to the ID of the current message
+                    highId = message.id;
+                }
             }
-        }
-        //* Return the highest ID found
-        return highId;
-    },
+            // * Return the highest ID found
+            return highId;
+        },
+        // * Retrieves the messages for the current chat
+        currentChat() {
+            if (!this.selectedContact) {
+                return [];
+            } else {
+                return this.chatMessages.filter(message => message.to === this.selectedContact.id || message.from === this.selectedContact.id);
+            }
+        },
+        // * Computes placeholder text based on whether a contact is selected or not
         placeholderText() {
-            //* Computes placeholder text based on whether a contact is selected or not
             return this.selectedContact ? 'Type a message' : 'Select a contact to start chatting...';
         }
     },
     methods: {
+        // * Method to select a contact
         selectContact(contact) {
-            //* Method to select a contact
             this.selectedContact = contact;
         },
+        // * Method to compute classes for styling messages
         getMessageClasses(message) {
-            //* Method to compute classes for styling messages
             return {'message': true, 'sent': message.status === 'sent', 'received': message.status === 'received'};
         },
+        // * Method to send a message
         sendMessage() {
-            //* Computes the ID for the new message
-            if (this.newMessage.trim()) {
+            if (this.newMessage.trim() && this.selectedContact) {
+                // * Computes the ID for the new message
                 const newMessageId = this.highestIdMessage + 1;
-                //*New message obj
-                const newMessage = { id: newMessageId, text: this.newMessage.trim(), status: 'sent'};
-                //* Adds the new message to the chat messages
-                this.chatMessages.push(newMessage);
-                //* Resets the new message input field
+                // * New message object
+                const newMessage = { id: newMessageId, text: this.newMessage.trim(), status: 'sent', to: this.selectedContact.id, from: this.user.id };
+                // * Adds the new message to the selected contact's chatMessages
+                this.selectedContact.messages.push(newMessage);
+                // * Resets the new message input field
                 this.newMessage = '';
-
-                //*Delay sending automatic response
+        
+                // * Delay sending automatic response
                 setTimeout(() =>  {
-                    //* Call sendAutomaticResponse method to simulate sending response
-                    this.sendAutomaticResponse();
-                    //*set isTyping flag false.
-                    this.isTyping = false;
+                    if (this.selectedContact) {
+                        // * Call sendAutomaticResponse method to simulate sending response
+                        this.sendAutomaticResponse();
+                        // * Set isTyping flag false.
+                        this.isTyping = false;
+                    }
                 }, 3000);
-                //* Set isTyping flag to simulate fake contact typing a response
+                // * Set isTyping flag to simulate fake contact typing a response
                 this.isTyping = true;
             }
         },
-        //* Method to simulate sending automatic response.
+        // * Method to simulate sending automatic response
         sendAutomaticResponse() {
-            //* Create a response message object
-            const responseMessage = { id: this.nextMessageId++, text: 'Ciao!', status: 'received' };
-            //* Push the response message
-            this.chatMessages.push(responseMessage);
+            // * Create a response message object
+            const responseMessage = { id: this.nextMessageId++, text: 'Ciao!', status: 'received', to: this.user.id, from: this.selectedContact.id };
+            // * Push the response message
+            this.selectedContact.messages.push(responseMessage);
         }
     }
-})
-app.mount('#root');
+});
 
+app.mount('#root');
