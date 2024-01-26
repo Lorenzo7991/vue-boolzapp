@@ -9,7 +9,7 @@ const app = createApp({
             selectedContact: '',
             newMessage: '',
             chatMessages: [],
-            nextMessageId: '',
+            nextMessageId: 0,
             isTyping: false,
             searchTerm: '',
         };
@@ -20,7 +20,7 @@ const app = createApp({
             // * Initialize variable to hold highest ID found
             let highId = 0;
             // * Iterate through each message in chatMessages array
-            for (const message of this.chatMessages) {
+            for (const message of contact.messages) {
                 // * Check ID of current message if greater than current highest ID
                 if (message.id > highId) {
                     // * Update the highest ID to ID of current message
@@ -76,7 +76,8 @@ const app = createApp({
         sendMessage() {
             if (this.newMessage.trim() && this.selectedContact) {
                 // * Computes the ID for the new message
-                const newMessageId = this.highestIdMessage + 1;
+                const newMessageId = ++this.nextMessageId;
+                console.log("New message ID:", newMessageId); 
                 // * New message object
                 const newMessage = { id: newMessageId,
                                      text: this.newMessage.trim(), 
@@ -106,7 +107,9 @@ const app = createApp({
         // * Method to simulate sending automatic response
         sendAutomaticResponse() {
             // * Create response message object
-            const responseMessage = { id: this.nextMessageId++,
+            const responseMessageId = ++this.nextMessageId;
+            console.log("Response message ID:", responseMessageId);
+            const responseMessage = { id: +responseMessageId,
                                      text: 'Ciao!',
                                      status: 'received',
                                      date: this.getCurrentDate(), 
