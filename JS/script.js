@@ -15,9 +15,19 @@ const app = createApp({
     },
     computed: {
         highestIdMessage() {
-            //* Computes a message based on whether a contact is selected or not
-            return this.selectedContact ? 'Type a message' : 'Select a contact to start chatting...';
-        },
+            // *Initialize variable to hold highest ID found
+            let highId = 0;
+            //* Iterate through each message in chatMessages array
+        for (const message of this.chatMessages) {
+            //* Check ID of current message if is greater than the current highest ID
+            if (message.id > highId) {
+                // * Update the highest ID to the ID of the current message
+                highId = message.id;
+            }
+        }
+        //* Return the highest ID found
+        return highId;
+    },
         placeholderText() {
             //* Computes placeholder text based on whether a contact is selected or not
             return this.selectedContact ? 'Type a message' : 'Select a contact to start chatting...';
@@ -49,7 +59,7 @@ const app = createApp({
                     this.sendAutomaticResponse();
                     //*set isTyping flag false.
                     this.isTyping = false;
-                }, 1000);
+                }, 3000);
                 //* Set isTyping flag to simulate fake contact typing a response
                 this.isTyping = true;
             }
