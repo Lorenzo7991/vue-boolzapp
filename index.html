@@ -114,9 +114,11 @@
         <main id="chat-display" class="d-flex flex-column flex-grow-1 overflow-auto p-4">
             <div v-for="message in selectedContact.messages" :key="'received_' + message.id" :class="getMessageClasses(message)">
                 {{ message.text }}
+                <time datetime="message.date">{{ message.date }}</time>
             </div>
             <div v-for="message in chatMessages" :key="'sent_' + message.id" :class="getMessageClasses(message)">
                 {{ message.text }}
+                <time datetime="message.date">{{ message.date }}</time>
             </div>
         </main>
             <!-- * User msg bar -->

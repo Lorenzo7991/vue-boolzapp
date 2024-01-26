@@ -40,7 +40,7 @@ const app = createApp({
         // * Computes placeholder text based on whether a contact is selected or not
         placeholderText() {
             return this.selectedContact ? 'Type a message' : 'Select a contact to start chatting...';
-        }
+        },
     },
     methods: {
         // * Method to select a contact
@@ -49,7 +49,9 @@ const app = createApp({
         },
         // * Method to compute classes for styling messages
         getMessageClasses(message) {
-            return {'message': true, 'sent': message.status === 'sent', 'received': message.status === 'received'};
+            return {'message': true,
+                    'sent': message.status === 'sent',
+                    'received': message.status === 'received'};
         },
         // * Method to send a message
         sendMessage() {
@@ -57,8 +59,14 @@ const app = createApp({
                 // * Computes the ID for the new message
                 const newMessageId = this.highestIdMessage + 1;
                 // * New message object
-                const newMessage = { id: newMessageId, text: this.newMessage.trim(), status: 'sent', to: this.selectedContact.id, from: this.user.id };
-                // * Adds the new message to the selected contact's chatMessages
+                const newMessage = { id: newMessageId,
+                                     text: this.newMessage.trim(), 
+                                     status: 'sent',
+                                     date: this.getCurrentDate(), 
+                                     to: this.selectedContact.id, 
+                                     from: this.user.id };
+                
+                 // * Adds the new message to the selected contact's chatMessages
                 this.selectedContact.messages.push(newMessage);
                 // * Resets the new message input field
                 this.newMessage = '';
@@ -79,10 +87,19 @@ const app = createApp({
         // * Method to simulate sending automatic response
         sendAutomaticResponse() {
             // * Create a response message object
-            const responseMessage = { id: this.nextMessageId++, text: 'Ciao!', status: 'received', to: this.user.id, from: this.selectedContact.id };
+            const responseMessage = { id: this.nextMessageId++,
+                                     text: 'Ciao!',
+                                     status: 'received',
+                                     date: this.getCurrentDate(), 
+                                     to: this.user.id, 
+                                     from: this.selectedContact.id };
+            
             // * Push the response message
             this.selectedContact.messages.push(responseMessage);
-        }
+        },
+        getCurrentDate() {
+            return new Date().toLocaleString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+        },
     }
 });
 

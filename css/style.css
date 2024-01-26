@@ -155,10 +155,17 @@ body {
 }
 
 .message.received{
-    background-color: white;
     align-self: flex-start;
     text-align: left;
+    background-color: white;
 }
+
+#chat-display time{
+    font-size: 0.6rem;
+    text-align: right;
+    display: block;
+}
+
 
 #message-bar .msg-bar{
     margin: 0!important
