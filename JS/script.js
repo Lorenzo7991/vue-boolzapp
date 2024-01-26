@@ -122,6 +122,10 @@ const app = createApp({
         getCurrentDate() {
             return new Date().toLocaleString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
         },
+        deleteMessage(deletedMessage){
+            this.selectedContact.messages = this.selectedContact.messages.filter(message => message.id !== deletedMessage.id);
+            this.chatMessages = this.chatMessages.filter(message => message.id !== deletedMessage.id); 
+        }
     }
 });
 
