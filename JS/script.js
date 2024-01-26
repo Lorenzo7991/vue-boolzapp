@@ -100,7 +100,7 @@ const app = createApp({
                         this.isTyping = false;
                     }
                 }, 3000);
-                // * Set isTyping flag to simulate fake contact typing response
+                // * Set isTyping flag true to simulate fake contact typing response
                 this.isTyping = true;
             }
         },
