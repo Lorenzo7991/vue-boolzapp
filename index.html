@@ -23,11 +23,10 @@
     <script defer src="JS/script.js"></script>
 </head>
 
-
 <body class="vh-100">
     <div id="root">
         <main class="container row mx-auto p-0 mx-5"> 
-            <!-- * Left col -->
+            <!-- ^ LEFT COL -->
         <div id="left-col" class="col-4 bg-white d-flex flex-column p-0">
             <!-- * User header -->
             <header class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-2 ">
@@ -63,14 +62,13 @@
                     <div class="input-group flex-nowrap p-1">
                         <span role="button" class="input-group-text cs-text-color border-end-0" id="search-icon"><i
                                 class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control border-start-0" placeholder="Search..."
-                            aria-label="SearchBar" aria-describedby="search-bar">
+                        <input type="text" class="form-control border-start-0" placeholder="Search..." aria-label="SearchBar" aria-describedby="search-bar" v-model="searchTerm">
                     </div>
                     </section>
                     <!-- * Contacts list -->
                     <section id="contacts-list" class="flex-grow-1 overflow-auto " >
                         <ul>
-                        <li role="button" v-for="contact in contacts" :key="contact.id" id="profile" class="d-flex align-items-center my-2 p-2" @click="selectContact(contact)">
+                        <li role="button" v-for="contact in filteredContacts" :key="contact.id" id="profile" class="d-flex align-items-center my-2 p-2" @click="selectContact(contact)">
                             <!-- * Contact img -->
                             <img  :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="'avatar' + contact.id">
                             <!-- * Contact name -->
@@ -80,6 +78,7 @@
                     </section>
                 </main>
         </div>
+        <!-- ^ RIGHT COL -->
         <div id="right-col" class="col-8 d-flex flex-column p-0">
             <!-- * Chat header -->
             <header id="chat-header" class="bg-cs-gray d-flex align-items-center justify-content-between flex-shrink-0 p-2 ">

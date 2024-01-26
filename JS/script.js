@@ -11,6 +11,7 @@ const app = createApp({
             chatMessages: [],
             nextMessageId: '',
             isTyping: false,
+            searchTerm: '',
         };
     },
     computed: {
@@ -20,9 +21,9 @@ const app = createApp({
             let highId = 0;
             // * Iterate through each message in chatMessages array
             for (const message of this.chatMessages) {
-                // * Check ID of current message if greater than the current highest ID
+                // * Check ID of current message if greater than current highest ID
                 if (message.id > highId) {
-                    // * Update the highest ID to the ID of the current message
+                    // * Update the highest ID to ID of current message
                     highId = message.id;
                 }
             }
@@ -31,15 +32,33 @@ const app = createApp({
         },
         // * Retrieves the messages for the current chat
         currentChat() {
+            //* If no contact selected, return empty array
             if (!this.selectedContact) {
                 return [];
             } else {
+                //* Filter chatMessages array to include only messages related to selected contact
                 return this.chatMessages.filter(message => message.to === this.selectedContact.id || message.from === this.selectedContact.id);
             }
         },
         // * Computes placeholder text based on whether a contact is selected or not
         placeholderText() {
             return this.selectedContact ? 'Type a message' : 'Select a contact to start chatting...';
+        },
+        filteredContacts(){
+            //* If there's no search term, return all contacts
+            if (!this.searchTerm.trim()) {
+                return this.contacts;
+            } else {
+                //* Filter contacts based on search term
+                console.log("Search term:", this.searchTerm);
+                return this.contacts.filter(contact => {
+                    //* Convert contact name and search term to lowercase
+                    const contactName = contact.name.toLowerCase();
+                    const searchTerm = this.searchTerm.toLowerCase();
+                    //* Check if contact name contains search term
+                    return contactName.includes(searchTerm);
+                });
+            }
         },
     },
     methods: {
@@ -80,13 +99,13 @@ const app = createApp({
                         this.isTyping = false;
                     }
                 }, 3000);
-                // * Set isTyping flag to simulate fake contact typing a response
+                // * Set isTyping flag to simulate fake contact typing response
                 this.isTyping = true;
             }
         },
         // * Method to simulate sending automatic response
         sendAutomaticResponse() {
-            // * Create a response message object
+            // * Create response message object
             const responseMessage = { id: this.nextMessageId++,
                                      text: 'Ciao!',
                                      status: 'received',
